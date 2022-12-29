@@ -5,10 +5,15 @@ import (
 	"github.com/muesli/kmeans"
 )
 
-func GetColorPalette(startL, endL float64, parts int) (clusters mclusters.Clusters, err error) {
+type ColorPaletteParams struct {
+	partsAmount int
+	startLight, endLight float64
+}
+
+func GetColorPalette(params ColorPaletteParams) (clusters mclusters.Clusters, err error) {
 	paletteObs := make(mclusters.Observations, 0)
 
-	for l := float64(0); l < endL; l += 0.05 {
+	for l := float64(params.startLight); l < params.endLight; l += 0.05 {
 		for a := float64(-1); a < 1; a += 0.1 {
 			for b := float64(-1); b < 1; b += 0.1 {
 				paletteObs = append(paletteObs, mclusters.Coordinates{l, a, b})
@@ -17,10 +22,10 @@ func GetColorPalette(startL, endL float64, parts int) (clusters mclusters.Cluste
 	}
 
 	km := kmeans.New()
-	clusters, err = km.Partition(paletteObs, parts)
+	clusters, err = km.Partition(paletteObs, params.partsAmount)
 
 	if err != nil {
-		return 
+		return
 	}
 
 	return
