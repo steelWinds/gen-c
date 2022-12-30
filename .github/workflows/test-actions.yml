@@ -20,6 +20,6 @@ jobs:
       - name: Verify depends
         run: go mod verify
       - name: Run tests
-        run: go run -v ./...
+        run: go test -v ./...
 
 
