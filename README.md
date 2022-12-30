@@ -8,7 +8,7 @@ Simple console-aplication for generate color palette.
 ## Getting Started
 
 Try
-```
+```go
 params := genc.ColorPaletteParams{
     StartLight: -1,
     EndLight: 1,
