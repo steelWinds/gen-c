@@ -1,5 +1,4 @@
 name: Test Actions
-run-name: ${{ github.actor }} is testing
 on:
   push:
     branches:
@@ -13,14 +12,14 @@ jobs:
         os: [ubuntu-latest]
     runs-on: ${{ matrix.os }}
     steps:
-     - uses: actions/checkout@v3
-     - name: Setup golang
-       uses: actions/setup-go@v3
-       with:
-        go-version: "stable"
-    - name: Verify depends
-      run: go mod verify
-    - name: Run tests
-      run: go run -v ./...
+      - uses: actions/checkout@v3
+      - name: Setup golang
+        uses: actions/setup-go@v3
+        with:
+          go-version: "stable"
+      - name: Verify depends
+        run: go mod verify
+      - name: Run tests
+        run: go run -v ./...
 
 
