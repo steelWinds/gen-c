@@ -3,11 +3,11 @@
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/steelWinds/gen-c/test-actions.yml?label=tests)
 
 # genc
-Simple console-aplication for generate color palette.
+Simple console-aplication for generate colors in **RGB** and **Lab** models.
 
 ## Getting Started
-
 Try
+
 ```go
 params := genc.ColorPaletteParams{
     StartLight: -1,
@@ -17,3 +17,10 @@ params := genc.ColorPaletteParams{
 
 colors, err := genc.GenColors(params)
 ```
+
+## License
+This project under Mozilla Public License Version 2.0 license, see more in LICENSE file
+
+## Author
+
+[@steelWinds](https://github.com/steelWinds)
