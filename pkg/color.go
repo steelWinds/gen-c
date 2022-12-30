@@ -13,7 +13,7 @@ type ColorModels interface {
 	~ColorModelRGB | ~ColorModelLab
 }
 
-func GenColor[T ColorModels](params gen.ColorPaletteParams) (colors [][]T, err error) {
+func GenColors[T ColorModels](params gen.ColorPaletteParams) (colors [][]T, err error) {
 	var t T
 
 	var clusters mclusters.Clusters

@@ -11,14 +11,16 @@ func main() {
 	params := gen.ColorPaletteParams{
 		StartLight: -1,
 		EndLight: 1,
-		PartsAmount: 15,
+		PartsAmount: 3,
 	}
 
-	colors, err := pkg.GenColor[pkg.ColorModelLab](params)
+	colorsLab, err := pkg.GenColors[pkg.ColorModelLab](params)
+	colorsRGB, err := pkg.GenColors[pkg.ColorModelRGB](params)
 
 	if err != nil {
 		fmt.Println(err.Error())
 	}
 
-	fmt.Println(colors)
+	fmt.Printf("%v model colors: %v \n", "RGB", colorsRGB)
+	fmt.Printf("%v model colors: %v", "Lab", colorsLab)
 }
