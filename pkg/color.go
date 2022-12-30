@@ -34,11 +34,11 @@ func GenColors[T ColorModels](params gen.ColorPaletteParams) (colors [][]T, err 
 		case ColorModelLab:
 			l, a, b := color.Lab()
 
-			colorItem = []T {T(l), T(a), T(b)}
+			colorItem = []T{T(l), T(a), T(b)}
 		case ColorModelRGB:
 			r, g, b := color.Clamped().RGB255()
 
-			colorItem = []T {T(r), T(g), T(b)}
+			colorItem = []T{T(r), T(g), T(b)}
 		}
 
 		colors = append(colors, colorItem)

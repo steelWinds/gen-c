@@ -9,16 +9,21 @@ import (
 
 func main() {
 	params := gen.ColorPaletteParams{
-		StartLight: -1,
-		EndLight: 1,
+		StartLight:  -1,
+		EndLight:    1,
 		PartsAmount: 3,
 	}
 
-	colorsLab, err := pkg.GenColors[pkg.ColorModelLab](params)
-	colorsRGB, err := pkg.GenColors[pkg.ColorModelRGB](params)
+	var colorsLab [][]pkg.ColorModelLab
+	var colorsRGB [][]pkg.ColorModelRGB
+	var err error
 
-	if err != nil {
-		fmt.Println(err.Error())
+	if colorsLab, err = pkg.GenColors[pkg.ColorModelLab](params); err != nil {
+		panic(err)
+	}
+
+	if colorsRGB, err = pkg.GenColors[pkg.ColorModelRGB](params); err != nil {
+		panic(err)
 	}
 
 	fmt.Printf("%v model colors: %v \n", "RGB", colorsRGB)

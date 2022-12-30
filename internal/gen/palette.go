@@ -6,7 +6,7 @@ import (
 )
 
 type ColorPaletteParams struct {
-	PartsAmount int
+	PartsAmount          int
 	StartLight, EndLight float64
 }
 

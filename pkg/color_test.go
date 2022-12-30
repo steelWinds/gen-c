@@ -12,8 +12,8 @@ func TestGenColorRGB(t *testing.T) {
 	const RGBModelLen = 3
 
 	params := gen.ColorPaletteParams{
-		StartLight: -1,
-		EndLight: 1,
+		StartLight:  -1,
+		EndLight:    1,
 		PartsAmount: PartsAmount,
 	}
 
@@ -37,8 +37,8 @@ func TestGenColorLab(t *testing.T) {
 	const LabModelLen = 3
 
 	params := gen.ColorPaletteParams{
-		StartLight: -1,
-		EndLight: 1,
+		StartLight:  -1,
+		EndLight:    1,
 		PartsAmount: PartsAmount,
 	}
 
