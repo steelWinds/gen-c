@@ -1,6 +1,6 @@
-module github.com/steelWinds/gen-c
+module github.com/steelWinds/genc
 
-go 1.18
+go 1.19
 
 require (
 	github.com/lucasb-eyer/go-colorful v1.2.0

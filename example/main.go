@@ -3,26 +3,25 @@ package main
 import (
 	"fmt"
 
-	"github.com/steelWinds/gen-c/internal/gen"
-	"github.com/steelWinds/gen-c/pkg"
+	"github.com/steelWinds/genc"
 )
 
 func main() {
-	params := gen.ColorPaletteParams{
+	params := genc.ColorPaletteParams{
 		StartLight:  -1,
 		EndLight:    1,
 		PartsAmount: 3,
 	}
 
-	var colorsLab [][]pkg.ColorModelLab
-	var colorsRGB [][]pkg.ColorModelRGB
+	var colorsLab [][]genc.ColorModelLab
+	var colorsRGB [][]genc.ColorModelRGB
 	var err error
 
-	if colorsLab, err = pkg.GenColors[pkg.ColorModelLab](params); err != nil {
+	if colorsLab, err = genc.GenColors[genc.ColorModelLab](params); err != nil {
 		panic(err)
 	}
 
-	if colorsRGB, err = pkg.GenColors[pkg.ColorModelRGB](params); err != nil {
+	if colorsRGB, err = genc.GenColors[genc.ColorModelRGB](params); err != nil {
 		panic(err)
 	}
 

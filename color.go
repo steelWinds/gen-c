@@ -1,9 +1,8 @@
-package pkg
+package genc
 
 import (
 	"github.com/lucasb-eyer/go-colorful"
 	mclusters "github.com/muesli/clusters"
-	"github.com/steelWinds/gen-c/internal/gen"
 )
 
 type ColorModelRGB = uint8
@@ -13,12 +12,12 @@ type ColorModels interface {
 	~ColorModelRGB | ~ColorModelLab
 }
 
-func GenColors[T ColorModels](params gen.ColorPaletteParams) (colors [][]T, err error) {
+func GenColors[T ColorModels](params ColorPaletteParams) (colors [][]T, err error) {
 	var t T
 
 	var clusters mclusters.Clusters
 
-	if clusters, err = gen.GetColorPalette(params); err != nil {
+	if clusters, err = GetColorPalette(params); err != nil {
 		return
 	}
 

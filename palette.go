@@ -1,4 +1,4 @@
-package gen
+package genc
 
 import (
 	mclusters "github.com/muesli/clusters"
