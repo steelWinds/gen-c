@@ -15,7 +15,15 @@ params := genc.ColorPaletteParams{
     PartsAmount: 3,
 }
 
-colors, err := genc.GenColors(params)
+var err error
+var colorsLab [][]genc.ColorModelLab
+var colorsRGB [][]genc.ColorModelRGB
+
+// In Lab model
+colorsLab, err = genc.GenColors[genc.ColorModelLab](params)
+
+// In RGB model
+colorsRGB, err = genc.GenColors[genc.ColorModelRGB](params)
 ```
 
 ## License
