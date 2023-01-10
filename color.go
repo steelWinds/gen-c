@@ -3,6 +3,7 @@ package genc
 import (
 	"github.com/lucasb-eyer/go-colorful"
 	mclusters "github.com/muesli/clusters"
+	"github.com/pkg/errors"
 )
 
 type ColorModelRGB = uint8
@@ -18,6 +19,8 @@ func GenColors[T ColorModels](params ColorPaletteParams) (colors [][]T, err erro
 	var clusters mclusters.Clusters
 
 	if clusters, err = GetColorPalette(params); err != nil {
+		err = errors.Wrap(err, "while gen palette throw error")
+
 		return
 	}
 

@@ -3,6 +3,7 @@ package genc
 import (
 	mclusters "github.com/muesli/clusters"
 	"github.com/muesli/kmeans"
+	"github.com/pkg/errors"
 )
 
 type ColorPaletteParams struct {
@@ -25,6 +26,8 @@ func GetColorPalette(params ColorPaletteParams) (clusters mclusters.Clusters, er
 	clusters, err = km.Partition(paletteObs, params.PartsAmount)
 
 	if err != nil {
+		err = errors.Wrap(err, "gen kmeans algo throw err")
+
 		return
 	}
 

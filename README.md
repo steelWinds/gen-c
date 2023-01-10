@@ -6,8 +6,8 @@
 Simple console-aplication for generate colors in **RGB** and **Lab** models.
 
 ## Getting Started
-Try
 
+### Using
 ```go
 params := genc.ColorPaletteParams{
     StartLight: -1,
@@ -26,9 +26,13 @@ colorsLab, err = genc.GenColors[genc.ColorModelLab](params)
 colorsRGB, err = genc.GenColors[genc.ColorModelRGB](params)
 ```
 
+### Run tests
+```bash
+make run-tests
+```
+
 ## License
 This project under Mozilla Public License Version 2.0 license, see more in LICENSE file
 
 ## Author
-
 [@steelWinds](https://github.com/steelWinds)
